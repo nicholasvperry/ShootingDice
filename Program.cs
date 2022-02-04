@@ -30,10 +30,43 @@ namespace ShootingDice
 
             player1.Play(large);
 
+            SmackTalkingPlayer Smacker = new SmackTalkingPlayer();
+            Smacker.Name = "Smack Man";
+            Smacker.Taunt = "you smell like cheese!";
+
+            Smacker.Play(player1);
+
+            Player HighGuy = new OneHigherPlayer();
+            HighGuy.Name = "High Guy";
+            HighGuy.Play(player2);
+
+            // HumanPlayer ChooseNumber = new HumanPlayer();
+            // ChooseNumber.Name = "Chooser";
+            // ChooseNumber.Play(player2);
+
+            Player SuperSmacker = new CreativeSmackTalkingPlayer();
+            SuperSmacker.Name = "Super Smack";
+            SuperSmacker.Play(player1);
+            player1.Play(SuperSmacker);
+
+            UpperHalfPlayer TopHalf = new UpperHalfPlayer();
+            TopHalf.Name = "Sir TopHalf Man";
+            large.Play(TopHalf);
+            large.Play(TopHalf);
+            large.Play(TopHalf);
+
+            Player TomBrady = new SoreLoserPlayer();
+            TomBrady.Name = "Tom Brady";
+            TomBrady.Play(player1);
+            TomBrady.Play(player1);
+            TomBrady.Play(player1);
+            TomBrady.Play(player1);
+
+
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, large, Smacker, HighGuy, 
             };
 
             PlayMany(players);
